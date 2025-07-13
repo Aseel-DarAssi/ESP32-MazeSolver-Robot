@@ -163,7 +163,7 @@ void moveOneCellForward() {
     updateSpeed(); adjustPWM_PID();
     int current = getFrontDistance();
     if (current < 150) { Serial.println("Sudden wall ahead, stopping"); stopMotors(); break; }
-    if (current <= (startDistance - 300)) { stopMotors(); break; }
+    if (current <= (startDistance - 200)) { stopMotors(); break; }
     delay(50);
   }
 }
