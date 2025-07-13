@@ -153,7 +153,7 @@ void moveOneCellForward() {
       stopMotors();
       break;
     }
-    if (current <= (startDistance - 300)) {
+    if (current <= (startDistance - 200)) {
       stopMotors();
       break;
     }
