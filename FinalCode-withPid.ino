@@ -130,20 +130,39 @@ void stopMotors() {
   analogWrite(ENA, 0); analogWrite(ENB, 0);
 }
 
-// === Turn right 90 degrees ===
 void turnRight90() {
-  driveMotors(90, -90); delay(600); stopMotors();
+  digitalWrite(IN1, LOW);  
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);  
+  digitalWrite(IN4, HIGH);
+  analogWrite(ENA, 150);
+  analogWrite(ENB, 150);
+  delay(236);  
+  stopMotors();
 }
 
-// === Turn left 90 degrees ===
 void turnLeft90() {
-  driveMotors(-90, 90); delay(600); stopMotors();
+  digitalWrite(IN1, HIGH);  
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);  
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 150);
+  analogWrite(ENB, 150);
+  delay(236);
+  stopMotors();
 }
 
-// === Turn back 180 degrees ===
 void turnBack180() {
-  driveMotors(90, -90); delay(1200); stopMotors();
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  analogWrite(ENA, 150);
+  analogWrite(ENB, 150);
+  delay(472); 
+  stopMotors();
 }
+
 
 // === Get front distance from sensor ===
 int getFrontDistance() {
